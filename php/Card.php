@@ -3,7 +3,7 @@
     class Carta{
        /*  private int $id; */
         private bool $status;
-        private string $imagem = array(
+        private array $imagem = array(
             'assets/abobora.png'
         );       
         private string $imagemVirada = 'assets/interogacao.png';
