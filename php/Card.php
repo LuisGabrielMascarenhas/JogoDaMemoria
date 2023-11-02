@@ -4,7 +4,8 @@
        /*  private int $id; */
         private bool $status;
         private array $imagem = array(
-            'assets/abobora.png'
+            'assets/abobora.png',
+            'assets/fantasma.png',
         );       
         private string $imagemVirada = 'assets/interogacao.png';
     
