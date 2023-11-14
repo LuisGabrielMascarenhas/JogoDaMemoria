@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Jogo de Memória</title>
-    <!-- Inclua aqui seus estilos CSS se necessário -->
+    <title>Jogo da Memória</title>
+    
 </head>
 <body>
 
@@ -13,22 +13,22 @@
 <?php
 include_once 'php/JogoMemoria.php';
 
-$seuJogo = new JogoMemoria();
+$jogo = new JogoMemoria();
 
 
 if (isset($_POST['carta1']) && isset($_POST['carta2'])) {
     $posicaoCarta1 = (int)$_POST['carta1'];
     $posicaoCarta2 = (int)$_POST['carta2'];
-    $seuJogo->analisar($posicaoCarta1, $posicaoCarta2);
+    $jogo->analisar($posicaoCarta1, $posicaoCarta2);
 }
 
 
-$seuJogo->gerarHtmlJogo();
+$jogo->gerarHtmlJogo();
 ?>
 
-<?php echo $seuJogo->getHtml(); ?>
+<?php echo $jogo->getHtml(); ?>
 
-<?php echo $seuJogo->gethtmlPontos(); ?>
+<?php echo $jogo->gethtmlPontos(); ?>
 
 
 </body>
