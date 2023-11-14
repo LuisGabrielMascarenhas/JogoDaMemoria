@@ -3,18 +3,17 @@
     class Carta{
        
         private bool $status;
-        private array $imagem;      
+        private string $imagem;      
     
 
         //Construtor
         function __construct(string $imagem)
         {
         
-            $this->status = 1;
+            $this->status = false;
             $this->imagem = $imagem;
 
         }
-
 
 
         public function getStatus()
@@ -27,23 +26,18 @@
             return $this->imagem;
         }
         
-        public function setStatus(int $status)
-        {
-            return $this->status = $status; 
-        }
-        
         //Função para virar a carta
         public function virarCarta()
         {
-            $this->imagem = $this->status ? 0 : 1;
-            $this->setStatus(1);
+            $this->status = $this->status ? false : true;
+          
         }
         
         //Função para desvirar a carta
         public function desvirarCarta()
         {
-            $this->imagem = $this->status ? 1: 0;
-            $this->setStatus(0);
+            $this->status = true;
+          
         }
 
 
