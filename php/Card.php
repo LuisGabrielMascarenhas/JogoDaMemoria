@@ -1,40 +1,21 @@
 <?php
 
     class Carta{
-       /*  private int $id; */
+       
         private bool $status;
-        private array $imagem = array(
-            'assets/abobora.png',
-            'assets/fantasma.png',
-        );       
-        private string $imagemVirada = 'assets/interogacao.png';
+        private array $imagem;      
     
-
 
         //Construtor
-        function __construct(/* $id,*/$status,$imagem)
+        function __construct(string $imagem)
         {
-            /* $this->id= $id; */
-            $this->status = $status;
-            $this->imagem = $imagem;
-            $this->virarCarta();
-            $this->desvirarCarta();
-
-        }
-
-
-        function criarHtml($imagem){
-            foreach ($imagem as $imagens){
-                $this->imagem .= $imagens ? "<div class='card'><img src='{$imagens}' style='width:100%'> </div>": "<div class='card'><img src='{$imagens}' style='width:100%'> </div>";
-    
-            }
         
-        }
-      
+            $this->status = 1;
+            $this->imagem = $imagem;
 
-        /* public function getId(){
-            return $this->id;
-        } */
+        }
+
+
 
         public function getStatus()
         {
@@ -45,13 +26,8 @@
         {
             return $this->imagem;
         }
-
-        public function getImagemVirada()
-        {
-            return $this->imagemVirada;
-        }
         
-        public function setStatus($status)
+        public function setStatus(int $status)
         {
             return $this->status = $status; 
         }
@@ -59,14 +35,14 @@
         //Função para virar a carta
         public function virarCarta()
         {
-            $this->imagemVirada = $this->imagem;
+            $this->imagem = $this->status ? 0 : 1;
             $this->setStatus(1);
         }
         
         //Função para desvirar a carta
         public function desvirarCarta()
         {
-            $this->imagem = $this->imagemVirada;
+            $this->imagem = $this->status ? 1: 0;
             $this->setStatus(0);
         }
 
